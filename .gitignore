@@ -2,3 +2,4 @@
 .venv
 .vscode
 .promptflow
+__pycache__
