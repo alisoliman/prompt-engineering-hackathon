@@ -1,0 +1,26 @@
+--
+name: FewShotPrompt
+description: A prompt that uses few-shot examples to guide the model
+authors:
+  - Your Name
+model:
+  api: chat
+  configuration:
+    type: azure_openai
+    azure_endpoint: ${env:AZURE_OPENAI_ENDPOINT}
+    azure_deployment: ${env:AZURE_OPENAI_DEPLOYMENT}
+  parameters:
+    max_tokens: 3000
+sample:
+  question: What is the capital of Italy?
+---
+
+system:
+You are an AI assistant providing factual answers.
+
+
+user:
+Please provide the answer following.
+
+# New Question
+Q: {{question}}
